@@ -1,184 +1,260 @@
-# Advanced CAPTCHA Verification System Using Deep Learning and Adversarial Distortion
+# Advanced CAPTCHA Verification System
 
-A deep learning-based CAPTCHA verification project developed to study robust CAPTCHA recognition and resistance to automated solving through CNN-based recognition, adversarial distortion, and GAN-based experimentation.
+**Deep Learning | Computer Vision | Adversarial Learning | Cybersecurity**
 
-**Published Paper:** Advanced CAPTCHA Verification System Using Deep Learning and Adversarial Distortion Techniques for Enhanced Cybersecurity  
-**Conference:** IEEE International Conference on Intelligent Computing, Communication, Networking and Cybersecurity (IC2NC 2025)  
-**DOI:** https://doi.org/10.1109/IC2NC67409.2025.11376476
+A deep learning-based CAPTCHA verification project that explores robust CAPTCHA recognition and resistance against automated solving through CNN-based recognition, adversarial distortion, and GAN-based experimentation.
 
-## Project Overview
+---
 
-Traditional text-based CAPTCHA systems can be challenged by OCR and machine-learning-based automated solvers. This project investigates a CAPTCHA verification framework that combines:
+## Overview
 
-- Image preprocessing and normalization
+Traditional CAPTCHA systems are increasingly challenged by OCR and machine-learning-based automated solvers. This project investigates a CAPTCHA verification framework designed to improve resistance against automated attacks while maintaining human-readable challenges.
+
+The project combines:
+
 - CNN-based CAPTCHA character recognition
-- GAN-based distortion experimentation
-- Adversarial image transformations
+- GAN-based adversarial distortion
+- Image preprocessing and augmentation
+- Distorted CAPTCHA generation
 - Adaptive challenge generation concepts
-- Real-time threat assessment concepts
+- Behavioral threat assessment concepts
+- Evaluation against multiple automated attack categories
 
-The published research describes a modular workflow connecting CAPTCHA preprocessing, recognition, distortion generation, threat assessment, adaptive challenge generation, and verification.
+The implementation is provided as a Python-based Jupyter/Google Colab notebook.
 
-## Repository Contents
+---
 
-```text
-advanced-captcha-verification/
-├── README.md
-├── RESULTS.md
-├── CITATION.cff
-├── requirements.txt
-├── .gitignore
-└── notebooks/
-    └── advanced_captcha_verification.ipynb
-```
+## Key Features
 
-## Notebook
+- **CAPTCHA Recognition** — CNN-based recognition of distorted alphanumeric CAPTCHA images.
+- **Image Processing** — Image resizing, normalization, augmentation, and preprocessing using OpenCV and Pillow.
+- **Deep Learning** — CNN architecture for CAPTCHA character recognition using TensorFlow/Keras.
+- **Adversarial Distortion** — GAN-based experimentation for generating distorted CAPTCHA samples.
+- **Robustness Evaluation** — Testing recognition performance on distorted CAPTCHA samples.
+- **Threat-Aware Design** — Research framework incorporating adaptive difficulty and behavioral threat assessment.
+- **Visualization** — Training performance, predictions, and CAPTCHA samples are visualized within the notebook.
 
-The main implementation is provided in:
-
-```text
-notebooks/advanced_captcha_verification.ipynb
-```
-
-The notebook is designed primarily for **Google Colab** and contains the experimental implementation used for this project.
-
-The notebook includes:
-
-1. Dataset loading from Google Drive
-2. CAPTCHA image preprocessing
-3. Character encoding and decoding
-4. CNN model construction and training
-5. Training and validation evaluation
-6. CAPTCHA prediction and testing
-7. GAN generator and discriminator construction
-8. GAN training experimentation
-9. CAPTCHA distortion experiments
-10. Evaluation on distorted CAPTCHA samples
-11. Visualization of predictions and generated samples
-
-## Dataset
-
-The notebook expects the CAPTCHA image dataset at:
-
-```text
-/content/drive/MyDrive/captcha_images
-```
-
-The dataset is **not included in this repository**.
-
-To use a different dataset location, update the `image_folder` variable in the notebook.
+---
 
 ## Technologies
 
-- Python
-- TensorFlow / Keras
-- OpenCV
-- NumPy
-- Pandas
-- Scikit-learn
-- Matplotlib
-- Pillow
-- Google Colab
+| Category | Technologies |
+|---|---|
+| Programming | Python |
+| Deep Learning | TensorFlow, Keras |
+| Computer Vision | OpenCV, Pillow |
+| Machine Learning | Scikit-learn |
+| Data Processing | NumPy, Pandas |
+| Visualization | Matplotlib |
+| Environment | Google Colab, Jupyter Notebook |
 
-## Running the Notebook
+---
 
-### Google Colab
+## System Architecture
 
-1. Upload/open `notebooks/advanced_captcha_verification.ipynb` in Google Colab.
-2. Mount Google Drive when prompted.
-3. Place the CAPTCHA dataset in:
+The research framework follows the workflow below:
 
 ```text
-MyDrive/captcha_images
+                    CAPTCHA Dataset
+                           |
+                           v
+                 Image Preprocessing
+                           |
+                           v
+                CNN Character Recognition
+                           |
+                           v
+                 GAN-Based Distortion
+                           |
+                           v
+                  Threat Assessment
+                           |
+                           v
+              Adaptive Challenge Generation
+                           |
+                           v
+                     User Response
+                           |
+                           v
+                 Verification Decision
+                           |
+                           v
+                     Accept / Reject
 ```
 
-4. Run the notebook cells sequentially.
+### Main Components
 
-### Local Environment
+1. **Image Preprocessing**
+   - Noise reduction
+   - Image normalization
+   - Resizing
+   - Data augmentation
 
-Install the dependencies:
+2. **CNN Recognition Engine**
+   - Convolutional feature extraction
+   - Batch normalization
+   - ReLU activation
+   - Max pooling
+   - Dropout-based regularization
 
-```bash
-pip install -r requirements.txt
-```
+3. **GAN-Based Distortion**
+   - Generator and discriminator experimentation
+   - Adversarial image distortion
+   - Preservation of CAPTCHA character information
 
-The notebook contains Google Colab-specific Drive and file-upload operations, so Google Colab is the simplest environment for running it without modification.
+4. **Adaptive Challenge Generation**
+   - Dynamic challenge difficulty based on threat level
+   - Behavioral signals incorporated into the research framework
 
-## Published Research Methodology
+5. **Threat Assessment**
+   - Behavioral anomaly detection
+   - Historical threat patterns
+   - Attack-frequency and verification-failure signals
 
-The published paper describes a five-component framework:
+---
+
+## Implementation
+
+The main implementation is available in:
 
 ```text
-CAPTCHA Dataset
+notebooks/
+└── advanced_captcha_verification.ipynb
+```
+
+The notebook includes the following workflow:
+
+```text
+Dataset Loading
       |
       v
 Image Preprocessing
       |
       v
-CNN Character Recognition
+Character Encoding
       |
       v
-GAN-based Distortion
+CNN Model Construction
       |
       v
-Threat Assessment
+Model Training
       |
       v
-Adaptive Challenge Generation
+Validation & Testing
       |
       v
-User Response
+CAPTCHA Prediction
       |
       v
-Verification Decision
+GAN Experimentation
+      |
+      v
+CAPTCHA Distortion
+      |
+      v
+Distorted CAPTCHA Evaluation
 ```
 
-The paper describes a CNN recognition engine, a GAN-based distortion generator using U-Net-style skip connections, adaptive difficulty based on threat metrics, and hybrid anomaly detection using isolation forests and statistical process control.
+### Notebook Includes
 
-## Published Paper Results
+- CAPTCHA dataset loading
+- Image preprocessing
+- Character encoding and decoding
+- CNN model construction
+- CNN training and validation
+- CAPTCHA prediction
+- Model evaluation
+- GAN generator and discriminator experimentation
+- CAPTCHA distortion experiments
+- Evaluation on distorted samples
+- Visualization of predictions and generated CAPTCHA images
 
-The following values are **results reported in the published paper**, not claims that the current notebook reproduces all of them:
+---
 
-- CNN validation accuracy: **96.8%**
-- Human completion rate: **at least 91%**
-- Reported latency: **below 85 ms**
-- Reported automated-attack resistance: **94.9%–98.7%**
-- Experimental dataset: **10,000 synthetic CAPTCHA images**
-- Augmented training dataset: **50,000 images**
-- Reported evaluation included traditional OCR, deep-learning CNN attacks, adversarial ML, reinforcement learning, and ensemble methods
-- The paper reports a six-month deployment evaluation
+## Results
 
-Detailed published-paper results are documented in [`RESULTS.md`](RESULTS.md).
+The following results are **reported in the published research paper**:
 
-## Reproducibility Note
+| Metric | Reported Result |
+|---|---:|
+| CNN Validation Accuracy | **96.8%** |
+| Human Completion Rate | **≥ 91%** |
+| Reported Latency | **< 85 ms** |
+| Traditional OCR Resistance | **98.7%** |
+| Deep Learning CNN Resistance | **96.2%** |
+| Adversarial ML Resistance | **97.8%** |
+| Reinforcement Learning Resistance | **95.4%** |
+| Ensemble Methods Resistance | **94.9%** |
 
-This repository contains the experimental notebook associated with the project. It should **not** be interpreted as a complete one-command reproduction of every experiment and numerical result reported in the published paper.
+The reported experimental evaluation used **10,000 synthetic CAPTCHA images**, which were augmented to **50,000 images** for training.
 
-In particular:
+The research evaluated resistance against multiple automated attack categories, including traditional OCR, deep-learning CAPTCHA solvers, adversarial machine learning, reinforcement learning, and ensemble methods.
 
-- The paper describes CAPTCHA images with dimensions of 64 × 128 pixels, while the notebook's recognition configuration uses its own experimental image dimensions.
-- The paper describes a U-Net-based GAN generator with skip connections; the notebook contains GAN experimentation but should not be represented as an exact implementation of every architectural detail in the paper.
-- The notebook contains a separate image-distortion function used for experimental distorted samples.
-- The adaptive threat-scoring and full real-time deployment framework described in the paper are not exposed as a complete production service in this notebook.
-- Numerical results in `RESULTS.md` are explicitly labeled as published-paper results.
+> **Note:** The numerical results in this section are results reported in the published research paper. They are not presented as independently reproduced results from the current repository notebook.
 
-This distinction is intentional so that the repository accurately represents the supplied implementation and does not claim experiments that the notebook itself does not reproduce.
+---
 
-## Research Publication
+## Running the Project
 
-**Achu Jayan, Adithya N Reddy, Jaswanth Kumar N, Sagar Basavaraju**
+The notebook is designed primarily for **Google Colab**.
 
-"Advanced CAPTCHA Verification System Using Deep Learning and Adversarial Distortion Techniques for Enhanced Cybersecurity"
+### 1. Open the Notebook
 
-IEEE International Conference on Intelligent Computing, Communication, Networking and Cybersecurity (IC2NC 2025).
+Open:
 
-DOI: https://doi.org/10.1109/IC2NC67409.2025.11376476
+```text
+notebooks/advanced_captcha_verification.ipynb
+```
 
-## Author
+in Google Colab.
 
-**Jaswanth Kumar N**  
-B.Tech, Electronics and Computer Engineering  
-Amrita Vishwa Vidyapeetham, Bengaluru
+### 2. Provide the Dataset
 
-LinkedIn: https://www.linkedin.com/in/jaswanth-kumar-n/  
-GitHub: https://github.com/jaswanth2k4
+The notebook expects the CAPTCHA image dataset to be available through Google Drive at:
+
+```text
+MyDrive/captcha_images
+```
+
+If your dataset is stored at a different location, update the dataset path in the notebook.
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Notebook
+
+Execute the notebook cells sequentially.
+
+The CAPTCHA dataset and trained model files are intentionally not included in this repository.
+
+---
+
+## Repository Structure
+
+```text
+Advanced-Captcha-Verification/
+│
+├── notebooks/
+│   └── advanced_captcha_verification.ipynb
+│
+├── README.md
+├── RESULTS.md
+├── CITATION.cff
+├── requirements.txt
+└── .gitignore
+```
+
+## Publication
+
+This project resulted in the following peer-reviewed conference publication:
+
+**Achu Jayan, Adithya N Reddy, Jaswanth Kumar N, and Sagar Basavaraju**
+
+*Advanced CAPTCHA Verification System Using Deep Learning and Adversarial Distortion Techniques for Enhanced Cybersecurity*
+
+**IEEE International Conference on Intelligent Computing, Communication, Networking and Cybersecurity (IC2NC 2025)**
+
+**DOI:** https://doi.org/10.1109/IC2NC67409.2025.11376476
