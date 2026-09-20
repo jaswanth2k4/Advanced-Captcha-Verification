@@ -1,0 +1,8 @@
+numpy
+pandas
+matplotlib
+opencv-python>=4.7,<5
+Pillow
+scikit-learn
+tensorflow>=2.12,<3
+jupyter

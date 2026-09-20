@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Advanced CAPTCHA Verification System Using Deep Learning and Adversarial Distortion Techniques for Enhanced Cybersecurity"
+message: "If you use this repository, please cite the published paper."
+type: software
+authors:
+  - given-names: Achu
+    family-names: Jayan
+  - given-names: Adithya N
+    family-names: Reddy
+  - given-names: Jaswanth Kumar
+    family-names: N
+  - given-names: Sagar
+    family-names: Basavaraju
+identifiers:
+  - type: doi
+    value: 10.1109/IC2NC67409.2025.11376476
+repository-code: "https://github.com/jaswanth2k4/advanced-captcha-verification"
+url: "https://doi.org/10.1109/IC2NC67409.2025.11376476"
